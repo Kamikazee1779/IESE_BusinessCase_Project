@@ -34,21 +34,22 @@ If not available, you may download the ZIP instead.
 
 IESE_BusinessCase_Project/
 │
-├── data/ ← Input data (visible)
-│ ├── income_statement_2017_2022.csv
-│ └── student_weeks_history.csv
+├── data/                          # Input data (visible)
+│   ├── income_statement_2017_2022.csv
+│   └── student_weeks_history.csv
 │
-├── notebooks/
-│ ├── 01_data_exploration.ipynb
-│ ├── 02_model_engine.ipynb
-│ └── 03_montecarlo_simulations.ipynb
+├── notebooks/                     # Jupyter notebooks (analysis & simulations)
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_model_engine.ipynb
+│   └── 03_montecarlo_simulations.ipynb
 │
-├── model/
-│ └── business_logic.py
+├── model/                         # Core model logic
+│   └── business_logic.py
 │
-├── environment.yml
-├── README.md
-└── .gitignore
+├── environment.yml                # Conda environment specification
+├── README.md                      # Project documentation
+└── .gitignore                     # Ignored files
+
 
 ---
 
