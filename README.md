@@ -1,40 +1,105 @@
 # IESE Business Case – Monte Carlo Decision Model
 
-This repository contains the code and data used to build a Monte Carlo–based decision model for **IESE Business School’s Case 1** (RELE Rouen).  
+This repository contains the complete implementation of a **quantitative Monte Carlo model** designed to evaluate strategic decisions for a real business case studied at **IESE Business School**.
 
-The model compares three strategic options:
+The project includes:
 
-- **RELE** – Continue with the current franchise and positioning  
-- **OILTS** – Switch to the OILTS franchise, with renovation and a different business model  
-- **SELL** – Accept an external offer and exit the business
-
-The engine combines:
-- Historical financial and operational data  
-- Economic calibration (prices, cost ratios, debt schedule)  
-- A Monte Carlo simulation of future demand  
-- Intangible factors (moral, reputation, academic project) converted into a monetary **NEV (Net Equity Value)**
+- Economic calibration from historical financials  
+- Demand uncertainty modeling  
+- Multi-strategy comparison (RELE, OILTS, SELL)  
+- Intangible valuation (Moral, Reputation, Academic Project)  
+- Scenario analysis across 10 predefined cases  
+- Multi-horizon projections (2, 5, 7, 10 years)  
+- Fully reproducible environment  
 
 ---
 
-## 1. Repository structure
+# 1. Requirements
 
-```text
-.
-├── data/
-│   ├── income_statement_2017_2022.csv      # Historical P&L and key costs (input)
-│   ├── student_weeks_history.csv           # Historical demand in student-weeks (input)
-│   └── scenario_summary.csv                # Monte Carlo scenario results (generated output)
+To run this project **exactly as intended**, the following are required:
+
+### ✔ **Anaconda / Miniconda (mandatory)**  
+This project uses a Conda environment defined in `environment.yml`.  
+Installing via pip is NOT supported due to dependency management.
+
+Download here:  
+https://www.anaconda.com/download
+
+### ✔ Git (optional but recommended)  
+If not available, you may download the ZIP instead.
+
+---
+
+# 2. Repository Structure
+
+IESE_BusinessCase_Project/
 │
-├── model/
-│   ├── engine.py                           # Core economic engine + Monte Carlo logic
-│   ├── scenarios.py                        # Global parameters, strategies, scenario definitions
-│   └── __init__.py                         # Makes "model" a Python package
+├── data/ ← Input data (visible)
+│ ├── income_statement_2017_2022.csv
+│ └── student_weeks_history.csv
 │
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb           # Basic exploration of historical data
-│   ├── 02_model_engine.ipynb               # How to call and test the model engine
-│   └── 03_montecarlo_simulations.ipynb     # Full scenario analysis and CSV export
+│ ├── 01_data_exploration.ipynb
+│ ├── 02_model_engine.ipynb
+│ └── 03_montecarlo_simulations.ipynb
 │
-├── environment.yml                         # Conda environment specification
-├── .gitignore                              # Files and folders ignored by git
-└── README.md                               # This file
+├── model/
+│ └── business_logic.py
+│
+├── environment.yml
+├── README.md
+└── .gitignore
+
+---
+
+# 3. How to Run This Project
+
+## A) Using Git (recommended)
+
+1. Clone the repository:
+git clone https://github.com/Kamikazee1779/IESE_BusinessCase_Project.git
+cd IESE_BusinessCase_Project
+
+2. Create the Conda environment:
+conda env create -f environment.yml
+
+3. Activate the environment: 
+conda activate business_case_iese
+
+4. Launch Jupyter Notebook:
+jupyter notebook
+
+5. Open: 
+notebooks/03_montecarlo_simulations.ipynb
+
+And run all cells to generate scenario_summary.csv
+
+## B) Using ZIP download
+
+1. Download ZIP
+2. Extract
+3. Open terminal inside the folder
+4. Run steps 2–5 above
+
+---
+
+# 4. Output
+
+Running the full simulation produces the file: scenario_summary.csv
+
+which contains:
+
+- Expected NEV (economic + intangibles)
+- VaR 5% (downside risk)
+- CVaR 5% (tail risk)
+- Probability that RELE or OILTS outperform SELL
+- Results across all 10 scenarios × 4 projection horizons
+- The output allows for a full comparative analysis of strategic options under uncertainty.
+
+---
+
+# 5. Notes 
+- All required data to run the project is included in the data/ folder.
+- The environment.yml guarantees full reproducibility.
+- The core simulation logic is inside 03_montecarlo_simulations.ipynb.
+- No confidential or sensitive information is used.

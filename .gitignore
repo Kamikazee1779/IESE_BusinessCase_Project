@@ -15,16 +15,6 @@ __pycache__/
 .ipynb_checkpoints/
 */.ipynb_checkpoints/*
 
-# ============================
-# Data (Sensitive / Raw)
-# ============================
-data/*.csv
-data/*.xlsx
-data/*.xls
-data/*.json
-
-# Allow README examples but not case data
-!data/README.md
 
 # ============================
 # Outputs / Reports
