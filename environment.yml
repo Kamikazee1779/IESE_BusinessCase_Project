@@ -1,0 +1,11 @@
+name: business_case_iese
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - scipy
+  - pip
+  - pip:
+      - jupyter
+
