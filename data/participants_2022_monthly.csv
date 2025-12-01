@@ -1,0 +1,14 @@
+Year,Month,StandardExpected,StandardCompleted,StandardPercent,WeekendExpected,WeekendCompleted,WeekendPercent
+2022,January,15,16,107,6,7,117
+2022,February,20,18,90,6,8,133
+2022,March,20,21,104,6,10,167
+2022,April,40,35,88,3,4,133
+2022,May,25,21,84,6,6,100
+2022,June,25,26,104,6,7,117
+2022,July,40,28,70,6,4,67
+2022,August,40,17,43,6,2,33
+2022,September,30,7,23,6,2,33
+2022,October,20,3,15,6,1,17
+2022,November,20,8,40,6,3,50
+2022,December,25,12,48,6,4,67
+2022,Total,320,192,60,60,48,72
